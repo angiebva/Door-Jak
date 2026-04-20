@@ -3,7 +3,7 @@
   {
     name: "SoyJak",
     avatar: "👵",
-    img: "images/soyjak.png",
+    img: "images/soyjack.png",
     altImg: "https://media.tenor.com/AIY5Qv4KVE0AAAAj/soyjak-angry.gif",
     safe: true,
     desc: "a normal lookin guy",
