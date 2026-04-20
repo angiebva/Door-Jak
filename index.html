@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Door 'Jaks</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div id="game">
+
+  <div class="screen" id="welcome-screen">
+    <h1>DOOR 'JAKS</h1>
+    <p>Which wojacks will you let through your door?</p>
+    <button onclick="startGame()">▶ PLAY</button>
+
+  </div>
+
+  <div class="screen hidden" id="house-screen">
+    <button class="rules-btn house-rules" onclick="openRules()">📜 RULES</button>
+    <div id="score-display">
+  <p>Round: <span id="round-hud">1</span>/10</p>
+  <p>🔥 <span id="streak-hud">0</span></p>
+  <p>❤️ <span id="score-hud">3</span></p>
+
+</div>
+    <div id="door-wrap">
+      <p id="door-hint">Click the knob to open the door</p>
+      <div id="front-door">
+        <div id="door-panel-top"></div>
+        <div id="door-panel-bottom"></div>
+        <div id="door-knob" onclick="openDoor()"></div>
+      </div>
+    </div>
+  </div>
+
+<div class="screen hidden" id="door-screen">
+  <button class="rules-btn door-rules" onclick="openRules()">📜 RULES</button>
+  <p id="outside-label">There's someone at the door...</p>
+  <div id="door-stats">
+  <p>Round: <span id="door-round">1</span>/10</p>
+  <p>🔥 <span id="door-streak">0</span></p>
+  <p>❤️ <span id="door-hearts">3</span></p>
+  </div>
+  
+  <div id="visitor-layout">
+    <img id="v-img" src="" alt="visitor" />
+    <div id="visitor-info">
+      <div id="v-name"></div>
+      <div id="v-desc"></div>
+      <div id="v-quote"></div>
+      <div id="speech-bubble" class="hidden">
+    <img id="bubble-img" src="https://media.discordapp.net/attachments/694363633987092521/1495093330898321418/image.png?ex=69e4fdab&is=69e3ac2b&hm=0316e4ee56c68fe2a2c5c9d40410b7cd841c8da1367af25e7ad694c243c92781&=&format=webp&quality=lossless&width=1724&height=934" />
+    <div id="speech-text"></div>
+</div>
+    </div>
+  </div>
+
+  <div id="question-btns">
+  <button onclick="askQuestion(1)"> Why should I let you in?</button>
+  <button onclick="askQuestion(2)">Where did you come from?</button>
+</div>
+
+  <div id="choice-btns">
+    <button onclick="makeChoice(true)">✅ Let Them Inside</button>
+    <button id="btn-deny" onclick="makeChoice(false)">🚫 Kick Them Out</button>
+  </div>
+</div>
+
+  <div class="screen hidden" id="result-screen">
+    <img id = "img2" src="  " alt="visitor">
+    <div id="dia3"></div>
+    <div id="r-emoji"></div>
+    <div id="r-title"></div>
+    <div id="r-msg"></div>
+    <button onclick="nextRound()">Next Round →</button>
+  </div>
+
+  <div class="screen hidden" id="gameover-screen">
+    <img id = "img4" src="https://media1.tenor.com/m/LPUEAxhzjjcAAAAC/whyyy.gif">
+    <h1>GAME OVER</h1>
+    <p>You survived <span id="final-score">0</span> rounds</p>
+    <button onclick="resetGame()">Try Again</button>
+  </div>
+
+  <div class="screen hidden" id="win-screen">
+    <img id = "img3" src = "https://media.tenor.com/CnP64S7lszwAAAAi/meme-cat-cat-meme.gif">
+    <h1>🎉 YOU WIN!</h1>
+    <p>Perfect Score: 10/10</p>
+    <button onclick="resetGame()">Play Again</button>
+  </div>
+
+</div>
+<div id="rules-popup" class="hidden">
+  <div id="rules-box">
+    <button id="close-rules" onclick="closeRules()">✖</button>
+
+    <h2>Rules</h2>
+    <p>
+      Wojaks keep showing up to your house. <br>
+      Invite the friendly wojaks into your home. <br>
+      Kick the strange wojaks out! <br> <br>
+      Lose all hearts = Game Over!💔 <br>
+      Get 10 correct = You Win 🎉 <br>
+    </p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html> 
