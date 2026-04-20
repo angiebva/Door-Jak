@@ -242,7 +242,11 @@ if (!letIn && currentVisitor.safe) {
 
 if (letIn && currentVisitor.safe) {
   correct++;
-  if (correct >= 10) { show('win-screen'); return; }
+  if (correct >= 10) {
+  document.getElementById('win-score').textContent = correct;
+  show('win-screen');
+  return;
+}
 
   addGoodStreak();
 
@@ -286,6 +290,7 @@ if (round >= 10) {
   document.getElementById('final-score').textContent = correct;
 
   if (correct >= 7) {
+    document.getElementById('win-score').textContent = correct;
     show('win-screen'); 
   } else {
     show('gameover-screen');
