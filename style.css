@@ -1,0 +1,384 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #1a1a2e;
+  font-family: sans-serif;
+  color: white;
+}
+
+#game {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.screen {
+  position: absolute;
+  inset: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 16px;
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+button {
+  background: #f5c518;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ffd740;
+}
+
+
+#house-screen {
+  background-image: url('https://media.discordapp.net/attachments/694363633987092521/1495157624206000330/image.png?ex=69e5398c&is=69e3e80c&hm=ff8fb7eeadc4b23af1b95064a29508181a5460e8049b48fe7b715d317f26c081&=&format=webp&quality=lossless&width=1916&height=1094');
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+#door-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top:-10px;
+}
+#door-hint {
+  background: rgba(0,0,0,0.6);
+  color: #f5c518;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+
+  position: absolute;
+  top:80px;
+}
+
+#front-door {
+  width: 160px;
+  height: 280px;
+  background: #5c3317;
+  border: 4px solid #3d2009;
+  border-radius: 6px 6px 0 0;
+  position: relative;
+}
+
+#door-panel-top {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  right: 16px;
+  height: 90px;
+  border: 3px solid #3d2009;
+  border-radius: 4px;
+}
+
+#door-panel-bottom {
+  position: absolute;
+  top: 130px;
+  left: 16px;
+  right: 16px;
+  height: 120px;
+  border: 3px solid #3d2009;
+  border-radius: 4px;
+}
+
+#door-knob {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: #f5c518;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+#door-knob:hover {
+  background: #ffd740;
+  transform: translateY(-50%) scale(1.3);
+}
+
+#front-door {
+  transform: scale(1.8);
+}
+
+#door-screen {
+  background-image: url('https://media.discordapp.net/attachments/694363633987092521/1495052010595029072/emptyDoor.png?ex=69e4d730&is=69e385b0&hm=1fdaf992efbba86a0c81431646d925fee264da68bf86615421afbe331b50907e&=&format=webp&quality=lossless&width=1698&height=1680');
+  background-size: cover;
+  background-position: center;
+}
+#r-msg {
+  white-space: pre-line;
+}
+#score-display,
+#door-stats {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  background: rgba(0,0,0,0.6);
+  padding: 6px 18px;
+  border-radius: 20px;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #f5c518;
+}
+
+#score-display {
+  top: 20px;
+  right: 180px;
+  align-items: flex-end;
+}
+
+#door-stats {
+  top: 70px;
+  left: 20px;
+  align-items: flex-start;
+}
+
+#outside-label {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f5c518;
+  background: rgba(0,0,0,0.6);
+  padding: 10px 20px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+
+
+
+#v-name {
+  font-size: 25px;
+  font-weight: bold;
+  color: #f5c518;
+}
+
+#v-desc {
+  font-size: 20px;
+  color: #bbb;
+  line-height: 1.5;
+}
+
+#v-quote {
+  background: #223042;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 20px;
+  color: #ffe;
+  font-style: italic;
+}
+#v-img {
+  height: 500px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom:30px;
+}
+
+#visitor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  width: 400px;
+  min-height: 175px;
+  background: rgba(0,0,0,0.55);
+  padding: 28px;
+  border-radius: 14px;
+
+  position: absolute;
+  right: 40px;
+  top: 20px;
+}
+
+
+#question-btns {
+  position: absolute;
+  left: 40px;
+  bottom: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#question-btns button {
+  background: #223042;;
+  color: white;
+
+  padding: 16px 24px; 
+  font-size: 18px; 
+  border-radius: 12px;
+
+  width: 350px; 
+}
+#question-btns button:hover {
+  background: #6f8fc9;
+}
+
+
+#speech-bubble {
+  position: absolute;
+  right: 200px; 
+  top: 300px;  
+
+  width: 350px; 
+}
+
+#bubble-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#speech-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 70%;
+  text-align: center;
+
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#img2 {
+max-width: 300px;
+max-height: auto;
+}
+
+#img4{
+max-width: 300;
+max-height: auto;
+
+}
+
+#choice-btns {
+  display: flex;
+  gap: 12px;
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+}
+
+#choice-btns button {
+  flex: 1;
+  white-space: nowrap;
+}
+#btn-deny {
+  background: #e24b4a;
+  color: white;
+}
+
+#btn-deny:hover {
+  background: #c0392b;
+}
+
+.rules-btn {
+  position: absolute;
+
+  background: rgba(0,0,0,0.6);
+  color: #f5c518;
+
+  padding: 10px 18px;
+  border-radius: 20px;
+
+  font-size: 20px;
+  font-family:sans-serif;
+  font-weight: bold;
+}
+
+.rules-btn:hover {
+  background: #6f8fc9;
+  color: white; 
+}
+
+.house-rules {
+  position: absolute;
+  top: 20px;
+  left:180px;
+}
+.door-rules {
+  top: 175px;
+  left: 20px;
+}
+#rules-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+}
+
+#rules-box {
+  background: #1a1a2e;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+#close-rules {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  background: #e24b4a;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+}
+
+
+#result-screen *{
+  font-family: sans-serif !important;
+}
