@@ -50,7 +50,7 @@ button:hover {
 
 
 #house-screen {
-  background-image: url('https://media.discordapp.net/attachments/694363633987092521/1495157624206000330/image.png?ex=69e5398c&is=69e3e80c&hm=ff8fb7eeadc4b23af1b95064a29508181a5460e8049b48fe7b715d317f26c081&=&format=webp&quality=lossless&width=1916&height=1094');
+  background-image: url('images/house.png');
   background-size: cover;
   background-position: center;
 }
@@ -129,7 +129,7 @@ button:hover {
 }
 
 #door-screen {
-  background-image: url('https://media.discordapp.net/attachments/694363633987092521/1495052010595029072/emptyDoor.png?ex=69e4d730&is=69e385b0&hm=1fdaf992efbba86a0c81431646d925fee264da68bf86615421afbe331b50907e&=&format=webp&quality=lossless&width=1698&height=1680');
+  background-image: url('images/door.png');
   background-size: cover;
   background-position: center;
 }
